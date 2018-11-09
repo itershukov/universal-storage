@@ -2,14 +2,14 @@
   "name": "universal-storage",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:itershukov/universal-storage.git"
-  }
+  },
   "author": "itersh",
   "license": "ISC"
 }
