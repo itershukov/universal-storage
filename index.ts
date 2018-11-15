@@ -24,10 +24,26 @@ export interface ISyncStorage {
   setItem: ISyncSetter;
 }
 
-export default class Storage implements IAsyncStorage, Storage {
+export class WebStorageDecorator implements IAsyncStorage {
+  readonly storage: IAsyncStorage;
+
+  constructor(storage: IAsyncStorage) {
+    this.storage = storage;
+  }
+
+  async getItem(key: string) {
+    return this.storage.getItem(key);
+  }
+
+  async setItem(key: string, value: string) {
+    return this.storage.setItem(key, value);
+  }
+}
+
+export class MobStorageDecorator implements IAsyncStorage {
   readonly storage: IAsyncStorage | ISyncStorage;
 
-  constructor(storage: IAsyncStorage | ISyncStorage) {
+  constructor(storage: Storage) {
     this.storage = storage;
   }
 
