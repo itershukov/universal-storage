@@ -41,9 +41,9 @@ export class WebStorageDecorator implements IAsyncStorage {
 }
 
 export class MobStorageDecorator implements IAsyncStorage {
-  readonly storage: IAsyncStorage | ISyncStorage;
+  readonly storage: IAsyncStorage;
 
-  constructor(storage: Storage) {
+  constructor(storage: IAsyncStorage) {
     this.storage = storage;
   }
 
