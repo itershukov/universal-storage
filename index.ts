@@ -25,9 +25,9 @@ export interface ISyncStorage {
 }
 
 export class WebStorageDecorator implements IAsyncStorage {
-  readonly storage: IAsyncStorage;
+  readonly storage: ISyncStorage;
 
-  constructor(storage: IAsyncStorage) {
+  constructor(storage: ISyncStorage) {
     this.storage = storage;
   }
 
