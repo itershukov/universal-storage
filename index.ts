@@ -1,5 +1,3 @@
-'use strict'
-
 interface IAsyncGetter {
   (key: string): Promise<string | void | null>;
 }
