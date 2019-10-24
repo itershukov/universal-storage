@@ -28,7 +28,7 @@ export class WebStorageDecorator implements IAsyncStorage {
   readonly storage: ISyncStorage;
 
   constructor(storage: ISyncStorage) {
-    this.storage = storage;
+    this.storage = storage || {getItem: ()=>{return {}}, setItem: ()=>{return {}}};
   }
 
   async getItem(key: string) {
